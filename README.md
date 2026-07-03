@@ -265,25 +265,41 @@ X-API-Key: your-api-key (if required)
 ## 📁 Project Structure
 
 ```
-Book_Store_API_Node.js/
-├── controllers/          # Business logic and request handlers
-├── models/              # MongoDB schemas and models
-├── routes/              # API route definitions
-│   ├── userRoutes.js
-│   └── adminRoutes.js
-├── utils/               # Utility functions and helpers
-├── docs/                # API documentation (Swagger/OpenAPI)
-│   ├── api-docs.yaml
-│   └── api-docs-admin.yaml
-├── public/              # Static files and localization
-│   └── locales/         # i18n translation files
-├── app.js              # Express app configuration
-├── server.js           # Server entry point
-├── package.json        # Project dependencies
-├── nodemon.json        # Nodemon configuration
-├── sample.env          # Sample environment variables
-├── Book_Store.postman_collection.json  # Postman collection
-└── .gitignore          # Git ignore file
+└── 📁Books_API
+    └── 📁controllers           # Business logic and request handlers
+        ├── authController.js
+        ├── booksController.js
+        ├── errorController.js
+        ├── userController.js
+    └── 📁docs                  # API documentation (Swagger/OpenAPI)
+        ├── api-docs-admin.yaml
+        ├── api-docs.yaml
+    └── 📁models                # MongoDB schemas and models
+        ├── bookModel.js
+        ├── cartModel.js
+        ├── orderModel.js
+        ├── userModel.js
+    └── 📁public                # Static image files and localization
+        └── 📁images
+        └── 📁locales           # i18n translation files
+            ├── en.json
+            ├── gu.json
+            ├── hi.json
+    └── 📁routes                # API route definitions
+        ├── adminRoutes.js
+        ├── userRoutes.js
+    └── 📁utils                 # Utility functions and helpers                     
+        ├── apiFeatures.js
+        ├── appError.js
+        ├── registerAdmin.js
+    ├── .gitignore
+    ├── app.js                  # Express app configuration
+    ├── Book_Store.postman_collection.json      # Postman collection
+    ├── config.env              # Environment variables
+    ├── nodemon.json            # Nodemon configuration             
+    ├── package-lock.json       # Project dependencies
+    ├── package.json            # Project dependencies
+    └── server.js               # Server entry point
 ```
 
 ## 🔒 Security Features
