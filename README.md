@@ -89,16 +89,18 @@ A comprehensive Node.js REST API for managing a book store with user authenticat
 Create a `config.env` file in the root directory with the following environment variables:
 
 ```env
-NODE_ENV=development
-DATABASE=mongodb+srv://username:password@cluster.mongodb.net/book_store
 PORT=3000
+DATABASE=mongodb+srv://username:password@cluster.mongodb.net/book_store
+JWT_SECRET='my jwt secret'
+JWT_EXPIRE_TIME=30d
 ```
 
 ### Environment Variables Reference
 
-- `NODE_ENV`: Set to `development` or `production`
-- `DATABASE`: MongoDB connection string
 - `PORT`: Port number for the server (default: 3000)
+- `DATABASE`: MongoDB connection string
+- `JWT_SECRET`: JWT secret key to generate token
+- `JWT_EXPIRE_TIME`: token expiration time
 
 ## 🚀 Getting Started
 
@@ -317,7 +319,7 @@ Contributions are welcome! Please follow these steps:
 
 ## 📄 License
 
-This project is licensed under the ISC License - see the LICENSE file for details.
+This project is licensed under the ISC License.
 
 ## 📧 Support
 
