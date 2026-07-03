@@ -14,7 +14,9 @@ const server = app.listen(process.env.PORT, () => {
     console.log(`Application is running on port ${process.env.PORT}`);
 });
 
+// To globally handle any unhandled or rejected promises error
 process.on('unhandledRejection', err => {
     console.log(err.name, err.message);
     server.close(() => process.exit(1));
+    // To first complete pending and running request using server.close and after that closing process
 });

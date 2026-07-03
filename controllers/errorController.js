@@ -17,6 +17,17 @@ const handleJWTExpiredError = err => {
     return new AppError('Token has expired! Please login again!', 401);
 }
 
+const handleDuplicateFieldsError = err => {
+    const duplicates = err.keyValue;
+    let message;
+    for(let field in duplicates) {
+        if(field === 'email')   message = `User with email ${duplicates[field]} already exist. Try with diffrent email address`;
+        else if(field === 'ISBN')    message = 'Book with this ISBN already exist.'
+        else message = `Duplicate ${field} value ${duplicates[field]}. Use another value`;
+    }
+    return new AppError(message, 400);
+}
+
 const sendDevelopmentError = (err, res) => {
     err.statusCode = err.statusCode || 500;
     err.status = err.status || 'Error';
@@ -60,6 +71,7 @@ exports.globalErrorHandler = (err, req, res, next) => {
         if(error.name === 'ValidationError')   error = handleDBValidationError(error, res);
         if(error.name === 'JsonWebTokenError')  error = handleJWTError(error);
         if(error.name === 'TokenExpiredError')  error = handleJWTExpiredError(error);
+        if(error.code === 11000)    error = handleDuplicateFieldsError(error);
         sendProductionError(error, res);
     }
 }

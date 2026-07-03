@@ -201,7 +201,7 @@ components:
       schema:
         type: number
     limit:
-      name: quantity
+      name: limit
       in: query
       schema:
         type: number

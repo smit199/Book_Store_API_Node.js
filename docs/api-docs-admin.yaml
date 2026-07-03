@@ -56,6 +56,19 @@ components:
       schema:
         type: string
       required: true
+    cartId:
+      name: cartId
+      in: path
+      schema:
+        type: string
+      required: true
+    orderId:
+      name: orderId
+      in: path
+      schema:
+        type: string
+      required: true
+    
     title:
       name: title
       in: query
@@ -172,9 +185,9 @@ components:
         stack:
           type: string
 
-    Book:
-      type: object
-      properties:
+    # Book:
+    #   type: object
+    #   properties:
         
 
 paths:

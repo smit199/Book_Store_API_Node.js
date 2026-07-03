@@ -70,7 +70,7 @@ app.use(mongoSanitize());
 app.use(xss());
 
 // to parse body and limit body size
-app.use(express.json({ limit: '500kb' }));
+app.use(express.json({ limit: '5mb' }));
 
 // to serve static files
 app.use(express.static(path.join(__dirname, 'public')));
