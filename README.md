@@ -260,8 +260,6 @@ X-API-Key: your-api-key (if required)
 | **CORS Error** | Verify API base URL in environment variables. Check CORS configuration. |
 | **File Upload Failed** | Ensure file size is under limit (500kb). Check file format is supported. |
 
-```
-
 ## 📁 Project Structure
 
 ```
