@@ -1,6 +1,6 @@
 # Book Store API
 
-A comprehensive Node.js REST API for managing a book store with user authentication, authorization, PDF file handling, and multi-language support.
+A comprehensive Node.js REST API for managing a book store with user authentication, authorization, bokk image handling, and multi-language support.
 
 ## 📋 Table of Contents
 
